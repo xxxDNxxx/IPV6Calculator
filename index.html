@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    <link rel="stylesheet" href="./node_modules/bulma/css/bulma.css">
+    <title>IPV6 Calculator</title>
+    <script src="big-number.js"></script>
+    <script src="Script.js"></script>
+    <script src="ipv6.js"></script>
+</head>
+<body>
+    <div class="hero-body">
+        <div class="container">
+          <div class="columns is-mobile is-centered">
+            <div class="column is-two-fifths">
+              <div class="box">
+                <div class="media-content">
+                  <h1 class="title">IPV6 Calculator</h1>
+                  <div class="field">
+                      <p>IP address(IPV6)</p>
+                    <div class="control">
+                      <input id = "ip" class="input is-large" type="text" placeholder="IPV6"></input>
+                    </div>
+                    <p  id="error" style="color:red;"></p>
+                  </div>
+                  <div class="field">
+                    <div class="control">
+                        <p>Prefix length</p>
+                            <div class="select is-primary">
+                              
+                              <select aria-label="Prefix length" id="prefix" title="Prefix length" ="button" aria-haspopup="true"
+                                  aria-controls="dropdown-menu2" size="1">
+                              </select>
+                                  </div>
+                        
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="control">
+                      <button onclick="checkIPV6()" class="button is-fullwidth is-primary is-large">Calculate</button>
+                    </div>
+                    </div>
+                  
+                  
+                </div>
+              </div>
+              <section id="hide">
+                <div>
+                    <div>
+                        <h2 class="title is-2">Result</h2>
+                        <br>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><h5 class="title is-5">IP address :</h5></td>
+                                    <td id="ipAddress"></td>
+                                </tr>
+        
+                                <tr>
+                                    <td><h5 class="title is-5">Network :</h5></td>
+                                    <td id="network"></td>
+                                </tr>
+        
+                                <tr>
+                                    <td><h5 class="title is-5">Prefix length :</h5></td>
+                                    <td id="prefixLength"></td>
+                                </tr>
+        
+                                <tr>
+                                    <td><h5 class="title is-5">Network range :</h5></td>
+                                    <td id="networkLengthStart"></td>
+        
+                                </tr>
+                                <tr>
+                                    <td></td>
+        
+                                    <td id="networkLengthEnd"></td>
+                                </tr>
+        
+                                <tr>
+                                    <td><h5 class="title is-5">Total IP addresses :</h5></td>
+                                    <td id="totalIP"></td>
+                                </tr>
+        
+                                <tr>
+                                    <td><h5 class="title is-5">IP address (full) :</h5></td>
+                                    <td id="fullIP"></td>
+                                </tr>
+        
+                                <tr>
+                                    <td><h5 class="title is-5">Integer ID :</h5></td>
+                                    <td id="integerIP"></td>
+                                </tr>
+        
+                                <tr>
+                                    <td><h5 class="title is-5">Hexadecimal ID :</h5></td>
+                                    <td id="hexIP"></td>
+                                </tr>
+        
+                                <tr>
+                                    <td><h5 class="title is-5">Dotted decimal ID :</h5></td>
+                                    <td id="dotIP"></td>
+                                </tr>
+
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <h2 class="title is-2">Subnet :</h2>
+            </section>
+            <section>
+              <div>
+                  <div>
+                      <form method="POST" action="">
+                          <div id="subnet"></div>
+                      </form>
+      
+                  </div>
+              </div>
+          </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>runPrefix(); hide();</script>
+</body>
+</html>
